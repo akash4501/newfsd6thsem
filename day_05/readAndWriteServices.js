@@ -1,5 +1,5 @@
 import fs from "fs/promises";
-export const readJsonFile = async(path) => {
+export const readJsonFile = async (path) => {
     try {
         const fileData = await fs.readFile(path, "utf-8");
         return JSON.parse(fileData);
@@ -7,11 +7,12 @@ export const readJsonFile = async(path) => {
         console.log("unable to read data");
     }
 }
-export const writeJsonFile = async(path, data) => {
+export const writeJsonFile = async(path, data)=>{
     try {
-        await fs.writeFile(path, JSON.stringify(data, 2, null));
-        console.log("Data has been written successfully");
+        await fs.writeFile(path,JSON.stringify(data,2,null));
+        console.log("Data has been written successfully");       
     } catch (error) {
-        console.log("unable to write");
+        console.log("unable to write");     
     }
 }
+

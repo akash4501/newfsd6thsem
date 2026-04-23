@@ -5,7 +5,7 @@ const student = {
     email: "emilyrenney@unesco.org",
     gender: "Female"
 }
-const writeFile = async(path, data) => {
+const writeFile = async (path, data) => {
     let status = 0;
     let message = "";
     try {
@@ -13,7 +13,7 @@ const writeFile = async(path, data) => {
         let updatedData = []
 
         if (!fileData) updatedData = [{ id: 1, ...data }]
-        else updatedData = [...fileData, { id: fileData.length + 1, ...data }];
+        else updatedData = [...fileData, { id: fileData.length + 1, ...data}];
 
         await writeJsonFile(path, updatedData);
         status = 200;
@@ -22,7 +22,7 @@ const writeFile = async(path, data) => {
         status = 500;
         message = `unable to update ${error}`
     }
-    return { status, message }
+    return {status,message}
 }
 writeFile("./students.json", student);
 
@@ -31,12 +31,12 @@ writeFile("./students.json", student);
 
 
 
-const readFile = async(path) => {
-        try {
-            const data = await readJsonFile(path);
-            console.log(data);
-        } catch (error) {
-            console.log("unable to read file");
-        }
+const readFile = async (path) => {
+    try {
+        const data = await readJsonFile(path);
+        console.log(data);
+    } catch (error) {
+        console.log("unable to read file");
     }
-    // readFile("./students.json")
+}
+// readFile("./students.json")

@@ -1,10 +1,10 @@
 import fs from "fs";
-const readDirSync = () => {
-    fs.readdirSync();
+const readDirSync =()=>{
+    fs.readFileSync();
 }
-const makeDirSync = () => {
-    fs.mkdirSync();
+const makeDirSync =()=>{
+    fs.readFileSync();
 }
-const removeDirSync = () => {
-    fs.rmdirSync();
+const removeDirSync =()=>{
+    fs.readFileSync();
 }
